@@ -1,0 +1,15 @@
+.background {
+    position: fixed;
+    width: 100vw;
+    pointer-events: none;
+    animation: appear ease-in-out 1s;
+}
+
+@keyframes appear {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
