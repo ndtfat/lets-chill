@@ -1,20 +1,17 @@
+import { memo } from 'react';
 import Proptypes from 'prop-types';
 import 'boxicons';
 import block from 'module-clsx';
-import styles from './style.module.scss';
+import styles from '../../scss/configOption.module.scss';
 import ListBox from '../ListBox';
 
 const clsx = block(styles);
 
-function ConfigOption({ icon, onOpen, isOpen, list, type, ...props }) {
-    const handleOpen = () => {
-        onOpen(true);
-    };
-
+function ConfigOption({ icon, isOpen, list, type, ...props }) {
     return (
         <div {...props} className={clsx('wrapper', { open: isOpen })}>
             {icon === 'esc' ? (
-                <div onClick={handleOpen} className={clsx('esc-btn')}>
+                <div className={clsx('esc-btn')}>
                     <span></span>
                     <span></span>
                     <span></span>

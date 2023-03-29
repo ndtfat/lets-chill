@@ -5,6 +5,13 @@
     animation: appear ease-in-out 1s;
 }
 
+.title {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    width: 180px;
+}
+
 @keyframes appear {
     from {
         opacity: 0;

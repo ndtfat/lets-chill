@@ -1,7 +1,6 @@
 import qnt from './0 phai ngay hom nay - QNT.mp3';
 import maiVe from './mai ve.mp3';
 import duCho from './Dù Cho.mp3';
-import khiEmLon from './Khi Em Lớn.mp3';
 import vongXoay from './vongXoay.mp3';
 import loMo from './lơ mơ - mer.mp3';
 import dontCome from './Mademoiselle - Why don´t you come_.mp3';
@@ -39,12 +38,6 @@ const vietNamPlaylist = [
         singer: 'Ngọc Nguyễn',
         songURL: duCho,
         thumnailURL: thumbDuchho,
-    },
-    {
-        name: 'Khi em lớn',
-        singer: 'Orange',
-        songURL: khiEmLon,
-        thumnailURL: thumbDistance,
     },
     {
         name: 'Vòng xoay',

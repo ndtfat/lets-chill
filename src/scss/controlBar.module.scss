@@ -1,0 +1,42 @@
+.control-bar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    left: 50%;
+    bottom: 30px;
+    transform: translate(-50%, 16px);
+    transition: 0.6s;
+
+    .control-btn {
+        transition: 0.6s;
+        &:nth-child(1) {
+            transform: translate(186px, 0);
+        }
+
+        &:nth-child(2) {
+            transform: translate(106px, 0);
+        }
+
+        &:nth-child(3) {
+            z-index: 1;
+        }
+
+        &:nth-child(4) {
+            transform: translate(-106px, 0);
+        }
+
+        &:nth-child(5) {
+            transform: translate(-186px, 0);
+        }
+    }
+
+    &:hover {
+        transform: translate(-50%, 0);
+
+        .control-btn {
+            z-index: 0;
+            transform: translate(0, 0);
+        }
+    }
+}

@@ -1,11 +1,16 @@
 import block from 'module-clsx';
-import styles from './style.module.scss';
+import styles from '../../scss/background.module.scss';
 
 const clsx = block(styles);
 
 function Background({ theme }) {
     console.log('theme rerender');
-    return <video loop muted autoPlay src={theme} className={clsx('background')} />;
+    return (
+        <>
+            <video className={clsx('background')} src={theme.themeSRC} loop muted autoPlay />
+            <img className={clsx('title')} src={theme.titleImg} />
+        </>
+    );
 }
 
 export default Background;

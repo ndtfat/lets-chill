@@ -121,10 +121,13 @@ $primary-color: #8de41c;
     &:hover {
         .config-option,
         .esc-btn {
-            &::after,
+            &::after {
+                opacity: 1;
+                transform: translateY(-1px);
+            }
             &::before {
                 opacity: 1;
-                transform: translateY(0);
+                transform: translateY(1px);
             }
 
             svg {
