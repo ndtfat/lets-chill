@@ -1,0 +1,48 @@
+.wrapper {
+    width: 100%;
+    position: relative;
+
+    &:hover {
+        .range {
+            height: 6px;
+        }
+    }
+}
+
+.range {
+    appearance: none;
+    height: 4px;
+    border-radius: 9999px;
+    background-color: #ffff;
+    overflow: hidden;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translateX(-50%);
+    transition: 0.2s;
+    cursor: grab;
+
+    &::-webkit-slider-thumb {
+        appearance: none;
+        width: 8px;
+        height: 8px;
+        background-color: #b8f06e;
+        border-radius: 50%;
+        box-shadow: -300px 0 0 300px #74b919;
+        pointer-events: none;
+        transition: 0.2s;
+    }
+
+    &_vertical {
+        transform-origin: 0 50%;
+        transform: rotateZ(-90deg) translateX(-50%);
+
+        &:active {
+            cursor: grabbing;
+        }
+    }
+
+    &_horizontal {
+        width: 100%;
+    }
+}

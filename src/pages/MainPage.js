@@ -1,17 +1,15 @@
-import { useSelector } from 'react-redux';
-import { themeSelector } from '../redux/selectors';
-import Background from '../components/Background';
-import ConfigBar from '../components/ConfigBar';
-import ControlBar from '../components/ControlBar/ControlBar';
+import { Background, ControlBar, ConfigBar, SongInfo, Audio } from '../components';
 
 function MainPage() {
-    const theme = useSelector(themeSelector);
+    console.log('Main Page');
 
     return (
         <>
-            <Background theme={theme} />
+            <Background />
+            <Audio />
             <ConfigBar />
             <ControlBar />
+            <SongInfo />
         </>
     );
 }

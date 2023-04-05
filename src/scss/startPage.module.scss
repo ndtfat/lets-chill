@@ -1,0 +1,37 @@
+@import './global.scss';
+
+.wrapper {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.video {
+    width: 400px;
+    margin-bottom: 30px;
+}
+
+.start-btn {
+    display: flex;
+    height: 50px;
+    width: 200px;
+    justify-content: center;
+    font-size: 40px;
+    border: none;
+    text-decoration: none;
+    font-family: 'Dancing Script', cursive;
+    color: #333;
+    background-color: transparent;
+    cursor: grab;
+    overflow: hidden;
+
+    .text-static {
+        margin-right: 14px;
+    }
+
+    .text-dynamic {
+        color: $primary-color;
+    }
+}

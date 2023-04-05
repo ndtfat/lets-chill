@@ -1,4 +1,4 @@
-$primary-color: #8de41c;
+@import './global.scss';
 
 .btn {
     display: flex;
@@ -45,7 +45,7 @@ $primary-color: #8de41c;
     }
 
     &_playing {
-        animation: soundEffect linear 1s infinite;
+        animation: soundEffect linear 1.2s infinite;
     }
 }
 

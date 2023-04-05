@@ -1,35 +1,20 @@
+@import './global.scss';
+
+.wrapper {
+    position: fixed;
+    bottom: 20px;
+    left: 50%;
+    transform: translate(-50%, 0);
+}
+
 .control-bar {
     display: flex;
     align-items: center;
     justify-content: center;
-    position: fixed;
-    left: 50%;
-    bottom: 30px;
-    transform: translate(-50%, 16px);
+    height: 150px;
+    bottom: 20px;
+    transform: translate(-50%, 20px);
     transition: 0.6s;
-
-    .control-btn {
-        transition: 0.6s;
-        &:nth-child(1) {
-            transform: translate(186px, 0);
-        }
-
-        &:nth-child(2) {
-            transform: translate(106px, 0);
-        }
-
-        &:nth-child(3) {
-            z-index: 1;
-        }
-
-        &:nth-child(4) {
-            transform: translate(-106px, 0);
-        }
-
-        &:nth-child(5) {
-            transform: translate(-186px, 0);
-        }
-    }
 
     &:hover {
         transform: translate(-50%, 0);
@@ -38,5 +23,71 @@
             z-index: 0;
             transform: translate(0, 0);
         }
+
+        .progress {
+            transform: translate(-50%, 0) scale(1);
+        }
     }
+}
+
+.control-btn {
+    position: relative;
+    transition: 0.6s;
+    &:nth-child(1) {
+        transform: translate(186px, 0);
+    }
+
+    &:nth-child(2) {
+        transform: translate(106px, 0);
+    }
+
+    &:nth-child(3) {
+        z-index: 1;
+    }
+
+    &:nth-child(4) {
+        transform: translate(-106px, 0);
+    }
+
+    &:nth-child(5) {
+        transform: translate(-186px, 0);
+    }
+}
+
+.control-volume {
+    width: 60px;
+    height: 220px;
+    display: flex;
+    justify-content: center;
+    background-color: $primary-color;
+    padding-bottom: 60px;
+    border-radius: 30px;
+    border-bottom-right-radius: 30px;
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    transform: translate(-50%, 0) scaleY(0);
+    transform-origin: 50% 86%;
+    z-index: -1;
+    transition: 0.4s;
+
+    .volume {
+        width: 200px;
+    }
+}
+
+.control-btn:nth-child(5):hover {
+    .control-volume {
+        transform: translate(-50%, 0) scaleY(1);
+    }
+}
+
+.progress {
+    width: 400px;
+    height: 10px;
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    transform: translate(-50%, 0) scaleX(0);
+    transition: 0.6s;
 }

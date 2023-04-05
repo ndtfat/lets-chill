@@ -1,4 +1,4 @@
-$primary-color: #8de41c;
+@import './global.scss';
 
 .wrapper {
     position: relative;
@@ -123,11 +123,11 @@ $primary-color: #8de41c;
         .esc-btn {
             &::after {
                 opacity: 1;
-                transform: translateY(-1px);
+                transform: translateY(0);
             }
             &::before {
                 opacity: 1;
-                transform: translateY(1px);
+                transform: translateY(0);
             }
 
             svg {

@@ -1,18 +1,18 @@
-$primary-color: #8de41c;
+@import './global.scss';
 
 .optionBar-container {
     position: fixed;
     top: 20px;
     left: 20px;
-    height: 64px;
-    width: 62px;
+    height: 65px;
+    width: 65px;
     border: 2px solid #fff;
     border-radius: 999px;
     transition: 0.6s;
 
     .option-container {
         position: absolute;
-        left: 4px;
+        left: 6px;
         top: 50%;
         transform: translateY(-50%);
         display: flex;
@@ -40,30 +40,32 @@ $primary-color: #8de41c;
     }
 
     &_open {
-        width: 264px;
+        width: 276px;
 
         .option-container {
-            left: 0;
+            left: 6px;
 
             .config-option {
                 display: flex;
-                margin: 0 6px;
+
                 &:not(.config-option:nth-child(1)) {
                     opacity: 1;
                 }
             }
 
             .esc-btn > span {
+                transition: 1s;
+
                 &:nth-child(1) {
                     top: 50%;
-                    transform: translate(-50%, -50%) rotate(-45deg + -90deg);
+                    transform: translate(-50%, -50%) rotateZ(-45deg);
                 }
                 &:nth-child(2) {
                     opacity: 0;
                 }
                 &:nth-child(3) {
                     bottom: 50%;
-                    transform: translate(-50%, 50%) rotate(45deg + 90deg);
+                    transform: translate(-50%, 50%) rotateZ(45deg);
                 }
             }
         }
