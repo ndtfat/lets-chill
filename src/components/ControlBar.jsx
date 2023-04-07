@@ -97,7 +97,7 @@ function ControlBar() {
                     case 'ArrowRight': {
                         dispatch(
                             songSlice.actions.updateProgress({
-                                value: song.currentTime.value + 10000,
+                                value: song.currentTime.value + 1000000,
                                 userAdjust: true,
                             }),
                         );
@@ -106,7 +106,7 @@ function ControlBar() {
                     case 'ArrowLeft': {
                         dispatch(
                             songSlice.actions.updateProgress({
-                                value: song.currentTime.value - 10000,
+                                value: song.currentTime.value - 1000000,
                                 userAdjust: true,
                             }),
                         );

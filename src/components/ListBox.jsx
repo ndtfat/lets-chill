@@ -1,7 +1,6 @@
 import { useDispatch, useSelector } from 'react-redux';
 import block from 'module-clsx';
 import styles from '../scss/listBox.module.scss';
-
 import songSlice from '../redux/reducerSlices/songSlice';
 import themeSlice from '../redux/reducerSlices/themeSlice';
 import { songSelector, themeSelector } from '../redux/selectors';

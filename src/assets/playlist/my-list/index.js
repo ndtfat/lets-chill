@@ -4,6 +4,9 @@ import loMo from './lơ mơ - mer.mp3';
 import dontCome from './Mademoiselle - Why don´t you come_.mp3';
 import time from './TIME - KIM KUNNI Ft. Astronormous.mp3';
 import vongXoay from './vongXoay.mp3';
+import trucDoiXung from './truc-doi-xung.mp3';
+import vaTheLaHet from './va-the-la-het.mp3';
+import masscara from './masscara.mp3';
 
 import thumbQnt from '../../song-thumb-nail/my-list/0-phai-hom-nay.jpg';
 import thumbDuchho from '../../song-thumb-nail/my-list/du-cho.jpg';
@@ -11,6 +14,9 @@ import thumbLoMO from '../../song-thumb-nail/my-list/lo-mo.jpg';
 import thumbTime from '../../song-thumb-nail/my-list/time.jpg';
 import thumbVongXoay from '../../song-thumb-nail/my-list/vong-xoay.jpg';
 import thumbDontCome from '../../song-thumb-nail/my-list/why-dont-you-come.jpg';
+import thumbTrucDoiXung from '../../song-thumb-nail/my-list/truc-doi-xung.jpg';
+import thumbVaTheLaHet from '../../song-thumb-nail/my-list/va-the-la-het.jpg';
+import thumbMasscara from '../../song-thumb-nail/my-list/mascara.jpg';
 
 const vietNamPlaylist = [
     {
@@ -48,6 +54,24 @@ const vietNamPlaylist = [
         singer: 'KIM KUNNI',
         songSrc: time,
         thumbnailURL: thumbTime,
+    },
+    {
+        name: 'Trục đối xứng',
+        singer: 'Ko QUẹt',
+        songSrc: trucDoiXung,
+        thumbnailURL: thumbTrucDoiXung,
+    },
+    {
+        name: 'Và thế là hết',
+        singer: 'chillies',
+        songSrc: vaTheLaHet,
+        thumbnailURL: thumbVaTheLaHet,
+    },
+    {
+        name: 'Masscara',
+        singer: 'chillies',
+        songSrc: masscara,
+        thumbnailURL: thumbMasscara,
     },
 ];
 

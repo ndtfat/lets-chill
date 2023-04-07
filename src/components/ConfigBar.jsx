@@ -3,6 +3,7 @@ import {
     IconArrowsMinimize,
     IconBoxMultiple3,
     IconPlaylist,
+    IconKeyboard,
 } from '@tabler/icons-react';
 import block from 'module-clsx';
 import { useState } from 'react';
@@ -69,6 +70,9 @@ function ConfigBar() {
                     </div>
                     <div className={clsx('config-option')}>
                         <ConfigOption list={playlists} type="list" icon={<IconPlaylist />} />
+                    </div>
+                    <div className={clsx('config-option')}>
+                        <ConfigOption type="list" icon={<IconKeyboard />} />
                     </div>
                 </div>
             </div>
