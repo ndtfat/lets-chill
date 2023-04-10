@@ -25,6 +25,7 @@ export default createSlice({
             console.log(action.payload);
             state.playlist = playlists[action.payload].list;
             console.log(state.playlist);
+            state.currentSongIndex = 0;
         },
         playPause: (state, action) => {
             state.playPause = action.payload;

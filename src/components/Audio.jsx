@@ -8,6 +8,9 @@ function Audio() {
     const audioRef = useRef();
     const song = useSelector(songSelector);
 
+    console.log(song);
+    console.log(song.playlist[song.currentSongIndex]);
+
     localStorage.setItem('song', JSON.stringify(song));
 
     const { songSrc } = useMemo(() => {

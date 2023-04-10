@@ -7,6 +7,8 @@ import vongXoay from './vongXoay.mp3';
 import trucDoiXung from './truc-doi-xung.mp3';
 import vaTheLaHet from './va-the-la-het.mp3';
 import masscara from './masscara.mp3';
+import s142 from './142.mp3';
+import thegioiconoinaochoem from './the-gioi-co-noi-nao-cho-em.mp3';
 
 import thumbQnt from '../../song-thumb-nail/my-list/0-phai-hom-nay.jpg';
 import thumbDuchho from '../../song-thumb-nail/my-list/du-cho.jpg';
@@ -17,6 +19,8 @@ import thumbDontCome from '../../song-thumb-nail/my-list/why-dont-you-come.jpg';
 import thumbTrucDoiXung from '../../song-thumb-nail/my-list/truc-doi-xung.jpg';
 import thumbVaTheLaHet from '../../song-thumb-nail/my-list/va-the-la-het.jpg';
 import thumbMasscara from '../../song-thumb-nail/my-list/mascara.jpg';
+import thumb142 from '../../song-thumb-nail/my-list/142.jpg';
+import thumbthegioiconoinaochoem from '../../song-thumb-nail/my-list/the-gioi-co-noi-nao-cho-em.jpg';
 
 const vietNamPlaylist = [
     {
@@ -72,6 +76,18 @@ const vietNamPlaylist = [
         singer: 'chillies',
         songSrc: masscara,
         thumbnailURL: thumbMasscara,
+    },
+    {
+        name: '142',
+        singer: 'sweet liquor',
+        songSrc: s142,
+        thumbnailURL: thumb142,
+    },
+    {
+        name: 'Thế giới có nơi nào cho em',
+        singer: 'sweet liquor',
+        songSrc: thegioiconoinaochoem,
+        thumbnailURL: thumbthegioiconoinaochoem,
     },
 ];
 
