@@ -1,8 +1,9 @@
 import { createSlice } from '@reduxjs/toolkit';
+import { act } from 'react-dom/test-utils';
 import { playlists } from '../../assets';
 
 const initialState = localStorage.getItem('song')
-    ? JSON.parse(localStorage.getItem('song'))
+    ? { ...JSON.parse(localStorage.getItem('song')), playPause: false }
     : {
           playlist: playlists[0].list,
           currentSongIndex: 0,
@@ -39,19 +40,30 @@ export default createSlice({
             if (state.currentSongIndex === state.playlist.length) {
                 state.currentSongIndex = 0;
             }
+            state.playPause = true;
+            state.currentTime = { ...state.currentTime, value: 0 };
         },
         prevSong: (state) => {
             state.currentSongIndex -= 1;
             if (state.currentSongIndex < 0) {
                 state.currentSongIndex = state.playlist.length - 1;
             }
+            state.playPause = true;
+            state.currentTime = { ...state.currentTime, value: 0 };
+        },
+        changeSong: (state, action) => {
+            state.currentSongIndex = action.payload;
+            state.playPause = true;
         },
         adjustVolume: (state, action) => {
             state.volume = action.payload;
             if (state.volume > 1) state.volume = 1;
+            if (state.volume < 0) state.volume = 0;
         },
         updateProgress: (state, action) => {
-            state.currentTime = action.payload;
+            state.currentTime = action.payload.value
+                ? action.payload
+                : { ...action.payload, value: 0 };
         },
     },
 });

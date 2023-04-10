@@ -1,0 +1,17 @@
+.wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 30px;
+    font-weight: bold;
+    border-radius: 4px;
+    background-color: #f2f2f2;
+
+    &_square {
+        height: 30px;
+    }
+    &_rectangle {
+        height: 30px;
+        padding: 6px 30px;
+    }
+}

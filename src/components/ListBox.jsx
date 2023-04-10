@@ -1,4 +1,5 @@
 import { useDispatch, useSelector } from 'react-redux';
+import Proptypes from 'prop-types';
 import block from 'module-clsx';
 import styles from '../scss/listBox.module.scss';
 import songSlice from '../redux/reducerSlices/songSlice';
@@ -19,20 +20,26 @@ function ListBox({ list, type = 'list' }) {
         if (type === 'list') {
             dispatch(songSlice.actions.changePlaylist(index));
         }
+        if (type === 'song-list') {
+            console.log(song.playlist[index]);
+            dispatch(songSlice.actions.changeSong(index));
+        }
     };
 
     return list ? (
-        <ul className={clsx('list')}>
+        <ul className={clsx('list', { song: type === 'song-list' })}>
             {list.map((item, index) => {
                 const className = clsx('item', {
-                    list: type === 'list',
+                    list: type === 'list' || type === 'song-list',
                     img: type === 'image',
                     active: item.themeSRC === currentTheme || song.playlist === item.list,
                 });
 
                 return (
                     <li key={index} className={className} onClick={() => handleClick(index)}>
-                        {item.name || (
+                        {type === 'list' || type === 'song-list' ? (
+                            <p>{item.name}</p>
+                        ) : (
                             <img className={clsx('item-img')} src={item.thumbnailURL} alt="img" />
                         )}
                     </li>
@@ -43,5 +50,10 @@ function ListBox({ list, type = 'list' }) {
         <></>
     );
 }
+
+ListBox.prototype = {
+    list: Proptypes.array.isRequired,
+    type: Proptypes.string,
+};
 
 export default ListBox;

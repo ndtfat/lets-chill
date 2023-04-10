@@ -4,6 +4,7 @@ import block from 'module-clsx';
 import styles from '../scss/songInfo.module.scss';
 import { motion } from 'framer-motion';
 import { songSelector } from '../redux/selectors';
+import ListBox from './ListBox';
 
 const clsx = block(styles);
 
@@ -30,6 +31,10 @@ function SongInfo() {
                 alt="song-thumbnail"
             ></img>
             <p className={clsx('song-info')}>{`${songInfo.name} - ${songInfo.singer}`}</p>
+
+            <div className={clsx('current-playlist')}>
+                <ListBox list={songData.playlist} type="song-list" />
+            </div>
         </motion.div>
     );
 }

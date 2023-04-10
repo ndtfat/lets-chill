@@ -2,19 +2,19 @@ import {
     IconArrowsMaximize,
     IconArrowsMinimize,
     IconBoxMultiple3,
-    IconPlaylist,
     IconKeyboard,
+    IconPlaylist,
 } from '@tabler/icons-react';
+import { motion } from 'framer-motion';
 import block from 'module-clsx';
 import { useState } from 'react';
-import { motion } from 'framer-motion';
 import { playlists, themes } from '../assets';
 import styles from '../scss/configBar.module.scss';
 import ConfigOption from './ConfigOption';
 
 const clsx = block(styles);
 
-function ConfigBar() {
+function ConfigBar({ onShowShortcuts }) {
     const [isOpen, setIsOpen] = useState(false);
     const [fullscreen, setFullscreen] = useState(false);
 
@@ -71,8 +71,8 @@ function ConfigBar() {
                     <div className={clsx('config-option')}>
                         <ConfigOption list={playlists} type="list" icon={<IconPlaylist />} />
                     </div>
-                    <div className={clsx('config-option')}>
-                        <ConfigOption type="list" icon={<IconKeyboard />} />
+                    <div className={clsx('config-option')} onClick={() => onShowShortcuts('click')}>
+                        <ConfigOption icon={<IconKeyboard />} />
                     </div>
                 </div>
             </div>

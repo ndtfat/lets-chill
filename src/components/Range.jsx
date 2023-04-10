@@ -16,7 +16,7 @@ function Range({ long = false, vertical = false, horizontal = false, value = 0, 
             <input
                 {...props}
                 className={className}
-                value={value}
+                value={value > 1000000000000 ? 0 : value}
                 type="range"
                 min="0"
                 max="1000000000000"

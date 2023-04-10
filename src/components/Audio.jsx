@@ -31,6 +31,7 @@ function Audio() {
             );
         };
         if (currentTime.userAdjust) {
+            // console.log(currentTime.value, ' of ', song);
             audioElement.currentTime = (currentTime.value / 1000000000000) * audioElement.duration;
         }
         audioElement.onended = () => {

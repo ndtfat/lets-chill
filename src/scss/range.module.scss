@@ -13,7 +13,7 @@
     appearance: none;
     height: 4px;
     border-radius: 9999px;
-    background-color: #ffff;
+    background-color: #fff;
     overflow: hidden;
     position: absolute;
     left: 50%;
@@ -22,7 +22,8 @@
     transition: 0.2s;
     cursor: grab;
 
-    &::-webkit-slider-thumb {
+    &::-webkit-slider-thumb,
+    &::-moz-range-thumb {
         appearance: none;
         width: 8px;
         height: 8px;
@@ -34,6 +35,7 @@
     }
 
     &_vertical {
+        width: 120px;
         transform-origin: 0 50%;
         transform: rotateZ(-90deg) translateX(-50%);
 

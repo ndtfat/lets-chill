@@ -10,7 +10,7 @@ import {
     IconVolumeOff,
 } from '@tabler/icons-react';
 import block from 'module-clsx';
-import { useEffect } from 'react';
+import { useEffect, useContext } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { motion } from 'framer-motion';
 import { songSelector } from '../redux/selectors';
@@ -23,18 +23,18 @@ const clsx = block(styles);
 
 function ControlBar() {
     // console.log('controlBar re-render');
+
     const dispatch = useDispatch();
     const song = useSelector(songSelector);
 
     const handleNextSong = () => {
         dispatch(songSlice.actions.nextSong());
-        dispatch(songSlice.actions.playPause(true));
-        dispatch(songSlice.actions.updateProgress(0));
     };
     const handlePrevSong = () => {
         dispatch(songSlice.actions.prevSong());
-        dispatch(songSlice.actions.playPause(true));
-        dispatch(songSlice.actions.updateProgress(0));
+    };
+    const handleRepeatSong = () => {
+        dispatch(songSlice.actions.repeat());
     };
     const handleAdjustVolume = (e) => {
         dispatch(songSlice.actions.adjustVolume(e.target.value / 1000000000000));
@@ -76,7 +76,6 @@ function ControlBar() {
                     // next / back / song
                     case 'ArrowRight': {
                         handleNextSong();
-                        dispatch(songSlice.actions.playPause(true));
                         break;
                     }
                     case 'ArrowLeft': {
@@ -95,18 +94,24 @@ function ControlBar() {
                     }
                     // adjust progress
                     case 'ArrowRight': {
-                        dispatch(
-                            songSlice.actions.updateProgress({
-                                value: song.currentTime.value + 1000000,
-                                userAdjust: true,
-                            }),
-                        );
+                        if (song.currentTime.value + 100000000000 < 1000000000000) {
+                            // console.log('up');
+                            dispatch(
+                                songSlice.actions.updateProgress({
+                                    value: song.currentTime.value + 100000000000,
+                                    userAdjust: true,
+                                }),
+                            );
+                        } else {
+                            handleNextSong();
+                        }
                         break;
                     }
                     case 'ArrowLeft': {
+                        // console.log('giảm');
                         dispatch(
                             songSlice.actions.updateProgress({
-                                value: song.currentTime.value - 1000000,
+                                value: song.currentTime.value - 100000000000,
                                 userAdjust: true,
                             }),
                         );
@@ -119,6 +124,14 @@ function ControlBar() {
                     }
                     case 'ArrowDown': {
                         dispatch(songSlice.actions.adjustVolume(song.volume - 0.1));
+                        break;
+                    }
+                    case 'KeyM': {
+                        handleMuted();
+                        break;
+                    }
+                    case 'KeyR': {
+                        handleRepeatSong();
                         break;
                     }
                     default:
@@ -151,15 +164,14 @@ function ControlBar() {
             }}
         >
             <div className={clsx('control-bar')}>
-                <div
-                    onClick={() => dispatch(songSlice.actions.repeat())}
-                    className={clsx('control-btn')}
-                >
+                <div onClick={handleRepeatSong} className={clsx('control-btn')}>
                     <Button isRepeat={song.repeat} small icon={<IconRepeat />} />
                 </div>
+
                 <div onClick={handlePrevSong} className={clsx('control-btn')}>
                     <Button small icon={<IconPlayerSkipBackFilled />} />
                 </div>
+
                 <div
                     className={clsx('control-btn')}
                     onClick={() => dispatch(songSlice.actions.playPause(!song.playPause))}
@@ -170,9 +182,11 @@ function ControlBar() {
                         icon={song.playPause ? <IconPlayerPauseFilled /> : <IconPlayerPlayFilled />}
                     />
                 </div>
+
                 <div onClick={handleNextSong} className={clsx('control-btn')}>
                     <Button small icon={<IconPlayerSkipForwardFilled />} />
                 </div>
+
                 <div className={clsx('control-btn')}>
                     <Button onClick={handleMuted} small icon={handleVolumeIcon()} />
                     <div className={clsx('control-volume')}>
@@ -183,6 +197,7 @@ function ControlBar() {
                         />
                     </div>
                 </div>
+
                 <div className={clsx('progress')}>
                     <Range
                         horizontal

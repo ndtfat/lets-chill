@@ -1,0 +1,22 @@
+.wrapper {
+    display: flex;
+    width: 100%;
+}
+
+.instruction {
+    &_icon {
+        display: flex;
+        justify-content: flex-end;
+        width: 30%;
+        margin-right: 10px;
+
+        & > * {
+            margin-right: 6px;
+        }
+    }
+    &_desc {
+        flex: 1;
+        display: flex;
+        align-items: center;
+    }
+}
