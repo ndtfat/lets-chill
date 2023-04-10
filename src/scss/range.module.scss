@@ -22,7 +22,17 @@
     transition: 0.2s;
     cursor: grab;
 
-    &::-webkit-slider-thumb,
+    &::-webkit-slider-thumb {
+        appearance: none;
+        width: 8px;
+        height: 8px;
+        background-color: #b8f06e;
+        border-radius: 50%;
+        box-shadow: -300px 0 0 300px #74b919;
+        pointer-events: none;
+        transition: 0.2s;
+    }
+
     &::-moz-range-thumb {
         appearance: none;
         width: 8px;
