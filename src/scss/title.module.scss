@@ -15,9 +15,9 @@
 
 .title {
     position: fixed;
-    left: 50%;
+    right: 50%;
     top: 50%;
-    transform: translate(-50%, -50%) scale(1);
+    transform: translate(50%, -50%) scale(1);
     width: 700px;
     stroke-width: 16px;
     stroke: #fff;
@@ -36,7 +36,9 @@
 @keyframes moveTitle {
     to {
         fill: #fff;
-        transform: translate(34%, -193%) scale(0.3);
+        top: 20px;
+        right: 20px;
+        transform: translate(0, 0) scale(0.3);
     }
 }
 
