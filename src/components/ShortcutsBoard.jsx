@@ -1,15 +1,14 @@
 import {
-    IconArrowNarrowUp,
     IconArrowNarrowDown,
-    IconArrowNarrowRight,
     IconArrowNarrowLeft,
+    IconArrowNarrowRight,
+    IconArrowNarrowUp,
     IconLetterM,
     IconLetterR,
 } from '@tabler/icons-react';
 import { motion } from 'framer-motion';
 import block from 'module-clsx';
 import styles from '../scss/shortcutsBoard.module.scss';
-import Keycap from './Keycap';
 import ShortcutInstruction from './ShortcutInstuctrion';
 
 const clsx = block(styles);

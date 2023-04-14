@@ -2,6 +2,7 @@
     position: fixed;
     width: 100vw;
     pointer-events: none;
+    animation: appear linear 1s;
 }
 
 .title {
@@ -9,4 +10,13 @@
     top: 20px;
     right: 20px;
     width: 180px;
+}
+
+@keyframes appear {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
 }

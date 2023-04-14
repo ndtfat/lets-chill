@@ -6,3 +6,4 @@ export { default as Button } from './Button';
 export { default as Background } from './Background';
 export { default as SongInfo } from './SongInfo';
 export { default as ShortcutsBoard } from './ShortcutsBoard';
+export { default as Title } from './Title';

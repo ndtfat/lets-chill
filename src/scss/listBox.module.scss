@@ -51,6 +51,8 @@
         width: 200px;
         padding: 22px 14px;
         border-bottom: 1px solid #ccc;
+        transition: letter-spacing 0.4s linear;
+
         &:first-child {
             border-top-left-radius: 10px;
         }

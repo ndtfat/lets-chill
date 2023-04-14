@@ -10,18 +10,21 @@ const feelPlaylist = [
     {
         name: "I don't love you",
         singer: 'Kang Seungyoon & Gummy',
+        songwriter: 'Urban Zakapa',
         songSrc: idontloveyou,
         thumbnailURL: thumbiontloveyou,
     },
     {
         name: 'Pano',
         singer: 'Zack Tabudlo',
+        songwriter: 'Zack Tabudlo',
         songSrc: panonaman,
         thumbnailURL: thumbpanonaman,
     },
     {
         name: 'Always',
         singer: 'keshi',
+        songwriter: 'keshi',
         songSrc: always,
         thumbnailURL: thumbalways,
     },

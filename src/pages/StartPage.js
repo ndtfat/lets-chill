@@ -1,4 +1,4 @@
-import { useRef } from 'react';
+import { useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
 import block from 'module-clsx';
 import styles from '../scss/startPage.module.scss';
@@ -21,6 +21,7 @@ const cat = {
         },
     },
     exit: {
+        rotate: [0, 360],
         scale: 3,
         opacity: 0,
         transition: {
@@ -59,10 +60,16 @@ function StartPage() {
 
     const handleClick = () => {
         videoRef.current.play();
-        setTimeout(() => {
-            linkRef.current.click();
-        }, 0);
     };
+
+    useEffect(() => {
+        videoRef.current.onplaying = () => {
+            console.log('play');
+            setTimeout(() => {
+                linkRef.current.click();
+            }, 0);
+        };
+    });
 
     return (
         <div className={clsx('wrapper')}>

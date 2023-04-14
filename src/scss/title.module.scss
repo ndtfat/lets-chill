@@ -1,0 +1,52 @@
+.wrapper {
+    position: fixed;
+    z-index: 1;
+}
+
+.overlay {
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    background-color: #000000a8;
+    opacity: 1;
+    transform: scale(1);
+    animation: disappear ease-in-out 1s 4s forwards;
+}
+
+.title {
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%) scale(1);
+    width: 700px;
+    stroke-width: 16px;
+    stroke: #fff;
+    fill: transparent;
+    stroke-dasharray: 19100;
+    stroke-dashoffset: 19100;
+    animation: textEffect ease-in-out 4s forwards, moveTitle ease-in-out 1s 4s forwards;
+}
+
+@keyframes textEffect {
+    to {
+        stroke-dashoffset: 0;
+    }
+}
+
+@keyframes moveTitle {
+    to {
+        fill: #fff;
+        transform: translate(34%, -193%) scale(0.3);
+    }
+}
+
+@keyframes disappear {
+    50% {
+        opacity: 0;
+        transform: scale(1);
+    }
+    100% {
+        opacity: 0;
+        transform: scale(0);
+    }
+}
