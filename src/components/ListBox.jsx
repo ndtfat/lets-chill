@@ -21,7 +21,6 @@ function ListBox({ list, type = 'list' }) {
             dispatch(songSlice.actions.changePlaylist(index));
         }
         if (type === 'song-list') {
-            console.log(song.playlist[index]);
             dispatch(songSlice.actions.changeSong(index));
         }
     };
@@ -32,7 +31,7 @@ function ListBox({ list, type = 'list' }) {
                 const className = clsx('item', {
                     list: type === 'list' || type === 'song-list',
                     img: type === 'image',
-                    active: item.themeSRC === currentTheme || song.playlist === item.list,
+                    active: item.themeSRC === currentTheme || song.playlist.list === item.list,
                 });
 
                 return (

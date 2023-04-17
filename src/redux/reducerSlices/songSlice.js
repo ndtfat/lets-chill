@@ -1,10 +1,10 @@
 import { createSlice } from '@reduxjs/toolkit';
 import { playlists } from '../../assets';
 
-const initialState = localStorage.getItem('song')
+const initialState = JSON.parse(localStorage.getItem('song'))
     ? { ...JSON.parse(localStorage.getItem('song')), playPause: false }
     : {
-          playlist: playlists[0].list,
+          playlist: playlists[0],
           currentSongIndex: 0,
           playPause: false,
           repeat: false,
@@ -21,9 +21,7 @@ export default createSlice({
     initialState: initialState,
     reducers: {
         changePlaylist: (state, action) => {
-            console.log(action.payload);
-            state.playlist = playlists[action.payload].list;
-            console.log(state.playlist);
+            state.playlist = playlists[action.payload];
             state.currentSongIndex = 0;
         },
         playPause: (state, action) => {

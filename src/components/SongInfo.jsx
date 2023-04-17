@@ -11,7 +11,7 @@ const clsx = block(styles);
 
 function SongInfo({ ...props }) {
     const songData = useSelector(songSelector);
-    const songInfo = songData.playlist[songData.currentSongIndex];
+    const songInfo = songData.playlist.list[songData.currentSongIndex];
     const [showDetail, setShowDetail] = useState(false);
 
     const handleShowDetail = () => {
@@ -43,7 +43,7 @@ function SongInfo({ ...props }) {
                 </p>
 
                 <div className={clsx('current-playlist')} onClick={(e) => e.stopPropagation()}>
-                    <ListBox list={songData.playlist} type="song-list" />
+                    <ListBox list={songData.playlist.list} type="song-list" />
                 </div>
             </motion.div>
 
