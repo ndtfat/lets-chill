@@ -35,7 +35,7 @@ export default createSlice({
         },
         nextSong: (state) => {
             state.currentSongIndex += 1;
-            if (state.currentSongIndex === state.playlist.length) {
+            if (state.currentSongIndex === state.playlist.list.length) {
                 state.currentSongIndex = 0;
             }
             state.playPause = true;
@@ -44,7 +44,7 @@ export default createSlice({
         prevSong: (state) => {
             state.currentSongIndex -= 1;
             if (state.currentSongIndex < 0) {
-                state.currentSongIndex = state.playlist.length - 1;
+                state.currentSongIndex = state.playlist.list.length - 1;
             }
             state.playPause = true;
             state.currentTime = { ...state.currentTime, value: 0 };
