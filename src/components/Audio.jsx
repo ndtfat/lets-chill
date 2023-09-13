@@ -11,7 +11,6 @@ function Audio() {
     localStorage.setItem('song', JSON.stringify(song));
 
     const { songSrc } = useMemo(() => {
-        console.log(song, song.currentSongIndex);
         const currentSong = song.playlist.list[song.currentSongIndex];
         return currentSong;
     }, [song.currentSongIndex, song.playlist]);
